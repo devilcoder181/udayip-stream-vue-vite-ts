@@ -1,0 +1,72 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 17px;
+
+    @media screen and (max-width:991px) {
+        font-size: 14px;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: var(--color-white);
+    background-color: var(--secondary-color);
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul,ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    min-width: 85%;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+header{
+    nav{
+        li{
+            a{
+                @include smText2();
+            }
+        }
+    }
+}
+
+.section_title{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    h2{
+        position: relative;
+        display: block;
+        @include lgText();
+    }
+}

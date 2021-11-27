@@ -1,0 +1,229 @@
+@mixin  animate() {
+    transform: none;
+    opacity: 1;
+}
+
+@mixin roundBorder() {
+    border-radius: 1.5vw;
+
+    @media only screen and (min-width:768px) and (max-width:1200px){
+        border-radius: 1.5vw;
+    }
+
+    @media only screen and (max-width:767px){
+        border-radius: 3.5vw;
+    }
+}
+
+@mixin havePadding() {
+    padding: 1.5vw;
+
+    @media only screen and (min-width:768px) and (max-width:1200px){
+        padding: 2.5vw;
+    }
+
+    @media only screen and (max-width:767px){
+        padding: 5vw;
+    }
+}
+
+@mixin scroll() {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: $brand-color-3 #fff;
+
+
+   /* Works on Chrome, Edge, and Safari */
+   &::-webkit-scrollbar {
+       width: 4px;
+   }
+   
+   &::-webkit-scrollbar-track {
+       background: #f0f0f0;
+   }
+   
+   &::-webkit-scrollbar-thumb {
+       background-color: $brand-color-3;
+   }
+}
+
+@mixin emText() {
+    font-size: 0.7vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 0.6vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 1vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 3vw;
+    }
+}
+
+@mixin emText2() {
+    font-size: 0.8vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 0.7vw;
+    }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 1.1vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 3.1vw;
+    }
+}
+
+
+@mixin smText() {
+    font-size: 0.9vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 0.8vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 1.25vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 3.25vw;
+    }
+}
+
+@mixin smText2() {
+    font-size: 0.95vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 0.925vw;
+    }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 1.3vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 3.5vw;
+    }
+}
+
+@mixin mdText() {
+    font-size: 1vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 0.9vw;
+    }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 1.5vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 4vw;
+    }
+}
+
+@mixin mdText2() {
+    font-size: 1.25vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 1.15vw;
+    }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 1.75vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 4.5vw;
+    }
+}
+
+@mixin mdText3() {
+    font-size: 1.5vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 1.4vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 2vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 5vw;
+    }
+}
+
+@mixin lgText() {
+    font-size: 1.75vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 1.65vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 2.25vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 5.5vw;
+    }
+}
+
+@mixin lgText2() {
+    font-size: 2vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 1.9vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 3vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 6vw;
+    }
+}
+
+@mixin lgText3() {
+    font-size: 2.25vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 2.15vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 3.5vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 6.5vw;
+    }
+}
+
+@mixin lgText4() {
+    font-size: 2.75vw;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 2.65vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 4.5vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 7.5vw;
+    }
+}

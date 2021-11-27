@@ -1,0 +1,83 @@
+.btn_group{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 -0.5em;
+
+    .btn_{
+        margin: 0 0.5em;
+    }
+
+    &.margin_{
+        margin-top: 1.5em;
+    }
+}
+
+.btn_{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.85em 1.5em;
+    border-radius: 0.25em;
+    font-size: 0.9vw;
+    color: var(--color-white);
+    font-weight: 600;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    @media only screen and (min-width:1200px) and (max-width:1400px){
+        font-size: 0.8vw;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+        font-size: 1.25vw;
+    }
+
+    @media only screen and (max-width:767px){
+        font-size: 3.25vw;
+    }
+
+    .icon_{
+        position: relative;
+        display: block;
+        margin-inline-end: 1em;
+        width: 1.25vw;
+        height: 1.25vw;
+
+        svg{
+            width: 100%;
+            height: auto;
+
+            path{
+                fill: var(--color-white);
+            }
+        }
+    }
+
+    &:hover{
+        background-color: var(--third-color);
+    }
+
+    &.white_{
+        background-color: var(--color-white);
+        color: var(--primary-color);
+
+        .icon_{
+            svg{
+                path{
+                    fill: var(--primary-color);
+                }
+            }
+        }
+
+        &:hover{
+            background-color: var(--body-color);
+        }
+    }
+}
