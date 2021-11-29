@@ -1,6 +1,6 @@
 <template>
   <section class="main_banner">
-    <banner-wrapper :movieData="mainMovie"></banner-wrapper>
+    <banner-wrapper></banner-wrapper>
     <banner-slider></banner-slider>
   </section>
 </template>

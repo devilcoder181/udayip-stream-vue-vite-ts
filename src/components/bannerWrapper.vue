@@ -1,8 +1,8 @@
 <template>
   <div class="banner_image_wrapper">
     <picture>
-      <source :src="movieData.image" type="images/jpeg" />
-      <img :src="movieData.image" :alt="movieData.name" />
+      <source :src="post.image" type="images/jpeg" />
+      <img :src="post.image" :alt="post.name" />
     </picture>
   </div>
 
@@ -71,26 +71,33 @@
       </a>
     </div>
     <div class="content_">
-      <div class="status_ribbon">
+      <div v-if="post.exclusive" class="status_ribbon">
         <span>Exclusive Rating</span>
       </div>
-      <h2>{{ movieData.name }}</h2>
+      <h2>{{ post.name }}</h2>
       <p>
-        The Hobbit is a film series consisting of three high fantasy adventure
-        films directed by Peter Jackson.
+        {{ post.desc }}
       </p>
       <ul class="movie_details">
         <li>
-          <div class="text_"><span>189 Min</span></div>
+          <div class="text_">
+            <span>{{ post.duration }}</span>
+          </div>
         </li>
         <li>
-          <div class="text_"><span>Action Adventure</span></div>
+          <div class="text_">
+            <span>{{ post.genre }}</span>
+          </div>
         </li>
         <li>
-          <div class="text_"><span>PEGI 16</span></div>
+          <div class="text_">
+            <span>{{ post.rating }}</span>
+          </div>
         </li>
         <li>
-          <div class="text_"><span>En-Us</span></div>
+          <div class="text_">
+            <span>{{ post.lang }}</span>
+          </div>
         </li>
       </ul>
       <div class="btn_group margin_">
@@ -174,11 +181,10 @@
 
 <script lang="ts">
 export default {
-  props: {
-    movieData: {
-      type: Object,
-      required: true,
-    },
+  data() {
+    return {
+      post: this.$store.getters.setDefaultPost,
+    };
   },
 };
 </script>

@@ -12,8 +12,8 @@
         @slideChange="onSlideChange"
       >
         <swiper-slide v-for="(item, index) in movieList" :key="index">
-          <div class="item_">
-            <img :src="item.img" :alt="item.id" />
+          <div class="item_" @click="changeTitle(item.id)">
+            <img :src="item.thumb" :alt="item.name" />
           </div>
         </swiper-slide>
       </swiper>
@@ -25,47 +25,27 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
-import poster1 from "../assets/images/poster/poster_1.jpg";
-import poster2 from "../assets/images/poster/poster_2.jpg";
-import poster3 from "../assets/images/poster/poster_3.jpg";
-import poster4 from "../assets/images/poster/poster_4.jpg";
-import poster5 from "../assets/images/poster/poster_5.jpg";
-import poster6 from "../assets/images/poster/poster_6.jpg";
-import poster7 from "../assets/images/poster/poster_7.jpg";
-import poster8 from "../assets/images/poster/poster_8.jpg";
-import poster9 from "../assets/images/poster/poster_9.jpg";
-import poster10 from "../assets/images/poster/poster_10.jpg";
-
 export default {
+  beforeCreate() {
+    this.$store.dispatch("initDefaultPost", 0);
+  },
   data() {
     return {
-      movieList: [
-        { id: 1, img: poster1 },
-        { id: 2, img: poster2 },
-        { id: 3, img: poster3 },
-        { id: 4, img: poster4 },
-        { id: 5, img: poster5 },
-        { id: 6, img: poster6 },
-        { id: 7, img: poster7 },
-        { id: 8, img: poster8 },
-        { id: 9, img: poster9 },
-        { id: 10, img: poster10 },
-        { id: 11, img: poster1 },
-        { id: 12, img: poster3 },
-      ],
+      movieList: this.$store.getters.setRecomendedPost,
     };
   },
   components: {
     Swiper,
     SwiperSlide,
   },
+  methods: {
+    changeTitle(el): void {
+      this.$store.dispatch("changeMainPost", el);
+    },
+  },
   setup() {
-    const onSwiper = (swiper): void => {
-      console.log(swiper);
-    };
-    const onSlideChange = (): void => {
-      console.log("slide change");
-    };
+    const onSwiper = (swiper): void => {};
+    const onSlideChange = (): void => {};
     return {
       onSwiper,
       onSlideChange,
