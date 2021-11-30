@@ -26,9 +26,6 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
 export default {
-  beforeCreate() {
-    this.$store.dispatch("initDefaultPost", 0);
-  },
   data() {
     return {
       movieList: this.$store.getters.setRecomendedPost,

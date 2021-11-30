@@ -2,7 +2,18 @@ import Vuex from 'vuex'
 
 const store: any = new Vuex.Store({
     state: {
-        defaultPost: '',
+        defaultPost: {
+            id: 1,
+            name: 'The Hobbit An Unexpected Journey',
+            image: 'https://wallpaperaccess.com/full/2071679.jpg',
+            thumb: 'https://collider.com/wp-content/uploads/the-hobbit-the-battle-of-the-five-armies-poster.jpg',
+            desc: 'The Hobbit is a film series consisting of three high fantasy adventure films directed by Peter Jackson.',
+            duration: '189 Min',
+            genre: 'Action Adventure',
+            rating: 'PEGI 16',
+            lang: 'En-Us',
+            exclusive: true
+        },
         recomendedPost: [
             {
                 id: 1,
