@@ -1,6 +1,6 @@
 <template>
   <main class="stream_main_window">
-    <main-header></main-header>
+    <main-header :showNav="true"></main-header>
     <main-banner></main-banner>
   </main>
 </template>

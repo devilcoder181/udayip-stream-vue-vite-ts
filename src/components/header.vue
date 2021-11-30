@@ -6,7 +6,7 @@
       <div class="nav_container">
         <nav-logo></nav-logo>
 
-        <div class="nav_placeholder">
+        <div v-if="isNavVisible" class="nav_placeholder">
           <nav-item></nav-item>
           <profile></profile>
           <toggler></toggler>
@@ -22,11 +22,22 @@ import navItem from "./nav.vue";
 import profile from "./profile.vue";
 import toggler from "./toggler.vue";
 export default {
+  props: {
+    showNav: {
+      type: Boolean,
+      required: true,
+    },
+  },
   components: {
     navLogo,
     navItem,
     profile,
     toggler,
+  },
+  data() {
+    return {
+      isNavVisible: this.showNav,
+    };
   },
 };
 </script>
