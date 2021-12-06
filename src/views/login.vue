@@ -22,15 +22,23 @@
         <div class="content_">
           <nav-logo></nav-logo>
           <div class="form_">
-            <div class="type_field">
-              <label for="username">Username</label>
-              <input type="text" name="username" />
-            </div>
+             <inputField
+              name="Username"
+              v-model="credentials.username"
+              inputType="text"
+              inputFor="username"
+              :isValid="false"
+              validationMessage=""
+            ></inputField>
 
-            <div class="type_field">
-              <label for="password">Password</label>
-              <input type="password" name="password" />
-            </div>
+             <inputField
+                name="Password"
+                v-model="credentials.pasword"
+                inputType="password"
+                inputFor="password"
+                :isValid="false"
+                validationMessage=""
+              ></inputField>
 
             <div class="btn_group">
               <button class="btn_">
@@ -47,14 +55,21 @@
 <script lang="ts">
 import loginImage from "../assets/images/login_banner.jpg";
 import navLogo from "../components/nav-logo.vue";
+import inputField from '../components/form/uInput.vue';
+
 export default {
   data() {
     return {
       loginImage,
+      credentials: {
+        username: '',
+        password: ''
+      }
     };
   },
   components: {
     navLogo,
+    inputField
   },
 };
 </script>

@@ -3,7 +3,7 @@
     <nav>
       <ul>
         <li v-for="(nav, index) in navItem" :key="index">
-          <a :href="nav.link" :title="nav.name">{{ nav.name }}</a>
+          <router-link :to="nav.link" :title="nav.name">{{ nav.name }}</router-link>
         </li>
       </ul>
     </nav>
@@ -15,10 +15,10 @@ export default {
   data() {
     return {
       navItem: [
-        { name: "Home", link: "#" },
-        { name: "My List", link: "#" },
-        { name: "Latest", link: "#" },
-        { name: "Up Coming", link: "#" },
+        { name: "Home", link: "/" },
+        { name: "My List", link: "/mylist" },
+        { name: "Latest", link: "/latest" },
+        { name: "Up Coming", link: "/coming" },
       ],
     };
   },
@@ -53,7 +53,7 @@ nav {
         font-weight: 600;
         text-transform: uppercase;
 
-        &:hover {
+        &:hover, &.router-link-exact-active {
           color: var(--primary-color);
         }
       }

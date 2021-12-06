@@ -7,7 +7,7 @@
 
     <div class="content_">
       <div class="container">
-        <div class="page_title">
+        <div class="page_title" v-if="pageTitle != undefined">
           <h1>{{ pageTitle }}</h1>
           <router-link to="/login" class="link_">Back To Login</router-link>
         </div>

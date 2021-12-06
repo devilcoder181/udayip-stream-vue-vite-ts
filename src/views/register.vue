@@ -7,39 +7,71 @@
     ></inner-banner>
     <div class="container">
       <div class="regsiter_wrapper">
-        <div class="type_field">
-          <label for="fullname">Full Name</label>
-          <input type="text" name="fullname" />
-        </div>
+        
+        <inputField
+          name="Full Name"
+          v-model="register.name"
+          inputType="text"
+          inputFor="fullname"
+          :isValid="false"
+          validationMessage=""
+        ></inputField>
 
-        <div class="type_field">
-          <label for="username">Username</label>
-          <input type="text" name="username" />
-        </div>
+        <inputField
+          ref="register"
+          name="Username"
+          v-model="register.username"
+          inputType="text"
+          inputFor="username"
+          :isValid="false"
+          validationMessage=""
+        ></inputField>
 
-        <div class="type_field">
-          <label for="email">Email</label>
-          <input type="email" name="email" />
-        </div>
+        <fileUpload label="Upload Picture"></fileUpload>
 
-        <div class="type_field">
-          <label for="phone">Phone</label>
-          <input type="number" name="phone" />
-        </div>
+        <inputField
+          ref="register"
+          name="Email"
+          v-model="register.email"
+          inputType="email"
+          inputFor="email"
+          :isValid="false"
+          validationMessage=""
+        ></inputField>
 
-        <div class="type_field">
-          <label for="password">Password</label>
-          <input type="password" name="password" />
-        </div>
+        <inputField
+          ref="register"
+          name="Phone"
+          v-model="register.phone"
+          inputType="number"
+          inputFor="phone"
+          :isValid="false"
+          validationMessage=""
+        ></inputField>
 
-        <div class="type_field">
-          <label for="cpassword">Confirm Password</label>
-          <input type="password" name="cpassword" />
-        </div>
+        <inputField
+          ref="register"
+          name="Password"
+          v-model="register.password"
+          inputType="password"
+          inputFor="password"
+          :isValid="false"
+          validationMessage=""
+        ></inputField>
+
+        <inputField
+          ref="register"
+          name="Confirm Password"
+          v-model="register.cpassword"
+          inputType="password"
+          inputFor="password"
+          :isValid="false"
+          validationMessage=""
+        ></inputField>
 
         <div class="type_field">
           <div class="btn_group">
-            <button class="btn_">
+            <button class="btn_" @click="createAccount"> 
               <span>Create Account</span>
             </button>
 
@@ -57,16 +89,33 @@
 import mainHeader from "../components/header.vue";
 import innerBanner from "../components/banner/innerBanner.vue";
 import loginImage from "../assets/images/login_banner.jpg";
+import inputField from '../components/form/uInput.vue';
+import fileUpload from '../components/form/fileUploader.vue';
 
 export default {
   components: {
     mainHeader,
     innerBanner,
+    inputField,
+    fileUpload
   },
   data() {
     return {
       img: loginImage,
+      register: {
+        name: '',
+        username: '',
+        email: '',
+        phone: null,
+        password: '',
+        cpassword: ''
+      }
     };
+  },
+  methods: {
+    createAccount() {
+      console.log(this.register)
+    }
   },
 };
 </script>
@@ -82,10 +131,14 @@ export default {
 .regsiter_wrapper {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 0.5fr;
   grid-gap: 3vw;
   width: 100%;
   height: auto;
   padding-top: 2.5vw;
+
+  .input_uploader{
+    grid-row: span 4;
+  }
 }
 </style>

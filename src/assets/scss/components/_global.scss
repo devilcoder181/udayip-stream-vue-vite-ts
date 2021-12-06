@@ -64,9 +64,32 @@ header{
     align-items: center;
     justify-content: flex-start;
 
-    h2{
+    h2,h1{
         position: relative;
         display: block;
         @include lgText();
     }
+
+    &.center_{
+        justify-content: center;
+    }
+
+    &.column_{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    p{
+        margin: 0;
+        display: block;
+        font-size: var(--md-text-2);
+    }
+}
+
+.common_inner_main{
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100vh;
 }

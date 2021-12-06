@@ -1,8 +1,8 @@
 <template>
   <div class="user_profile">
-    <a href="#" class="profile_" title="Settings">
+    <router-link to="/profile" class="profile_" title="Settings">
       <img :src="userImage" :alt="name" />
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -37,6 +37,8 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
+    z-index: 2;
+    overflow: hidden;
 
     &:after {
       content: "";
@@ -48,6 +50,8 @@ export default {
       background: var(--primary-color);
       opacity: 0;
       transition: opacity 0.3s ease;
+      z-index: 1;
+      border-radius: 50%;
     }
 
     img {
@@ -57,6 +61,8 @@ export default {
       height: 100%;
       object-fit: cover;
       object-position: top;
+      z-index: 0;
+      border-radius: 50%;
     }
 
     &:hover {
